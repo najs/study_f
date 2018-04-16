@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>q4</title>
+</head>
+<body>
+<script>
+	/*function biggest(i,j,k,l){
+		return Math.max.apply(null, [i,j,k,l]);
+	}*/
+	
+	
+	function compare(x, y){
+		return x > y ? x : y;
+	}
+	function biggest(i,j,k,l){
+		return compare(compare(compare(i,j),k),l);
+	}
+	biggest(2,5,10,1)
+</script>
+</body>
+</html>
