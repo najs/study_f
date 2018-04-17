@@ -14,46 +14,23 @@
 </div>
 <hr />
 <div>
-	<input type="text" id="input-color-test" placeholder="color">
+	<input type="text" id="input-color-test" placeholder="background-color">
+	
+	width and height :
+	<select id="select-width-test">
+		<option value="100">100px</option>
+		<option value="200">200px</option>
+		<option value="300">300px</option>
+		<option value="400">400px</option>
+		<option value="500">500px</option>
+		<option value="600">600px</option>
+	</select>
 	<div id="test">TEST</div>
 </div>
 
 
 <script>
-	getElementById('btn').addEventListener('click', app);
-	
-	getElementById('input-color')
-		.addEventListener('change', function(e) {
-			css('color', 'content', e.target.value);
-		});
-	getElementById('input-font-size')
-		.addEventListener('change', function(e) {
-			css('fontSize', 'content', e.target.value);
-		});
-	getElementById('input-color-test')
-		.addEventListener('change', function(e) {
-			css('backgroundColor', 'test', e.target.value);
-	});
-	
-	
-	function selectStyle(styleProperty) {
-		if (styleProperty === 'color') {
-			return 'color'
-		}
-		if(styleProperty === 'fontSize') {
-			return 'fontSize'
-		}
-		if (styleProperty === 'backgroundColor'){
-			return 'backgroundColor'
-		}
-	}
-	
-	function css(styleProperty, id, value){
-		return getElementById(id).style[selectStyle(styleProperty)] = value;
-	}
-
 	/* --------- */
-
 	function getElementById(id) {
 		return document.getElementById(id);
 	}
@@ -68,14 +45,38 @@
 	}
 	function app() {
 		if (isIPhone()) {
-			return draw('아이폰');
+			return draw('아이퐁');
 		}
 		if(isAndroid()) {
 			return draw('안드로이드');
 		}
 		return draw('기타기타');
 	}
-	
+	/* --------- */
+
+	getElementById('btn').addEventListener('click', app);
+
+	getElementById('input-color')
+		.addEventListener('change', function(e) {
+			css('color', 'content', e.target.value);
+		});
+	getElementById('input-font-size')
+		.addEventListener('change', function(e) {
+			css('fontSize', 'content', e.target.value);
+		});
+	getElementById('input-color-test')
+		.addEventListener('change', function(e) {
+			css('backgroundColor', 'test', e.target.value);
+		});
+	getElementById('select-width-test')
+		.addEventListener('change', function(e) {
+			css('width', 'test', e.target.value + 'px');
+			css('height', 'test', e.target.value + 'px');
+		});
+		
+	function css(styleProperty, id, value){
+		return getElementById(id).style[styleProperty] = value;
+	}
 	
 </script>
 </body>
