@@ -2,20 +2,20 @@ getElementById('btn').addEventListener('click', app);
 
 getElementById('input-color')
 	.addEventListener('change', function(e) {
-		css('color', 'content', e.target.value);
+		css('content','color', e.target.value);
 	});
 getElementById('input-font-size')
 	.addEventListener('change', function(e) {
-		css('fontSize', 'content', e.target.value);
+		css('content', 'fontSize', e.target.value);
 	});
 getElementById('input-color-test')
 	.addEventListener('change', function(e) {
-		css('backgroundColor', 'test', e.target.value);
+		css('test', 'backgroundColor', e.target.value);
 	});
 getElementById('select-width-test')
 	.addEventListener('change', function(e) {
-		css('width', 'test', e.target.value + 'px');
-		css('height', 'test', e.target.value + 'px');
+		css('test', 'width', e.target.value + 'px');
+		css('test', 'height', e.target.value + 'px');
 	});
 
 function getElementById(id) {
@@ -43,7 +43,7 @@ function app() {
 
 
 //q1
-function css(styleProperty, id, value){
+function css(id, styleProperty, value){
 	return getElementById(id).style[styleProperty] = value;
 }
 
@@ -55,14 +55,32 @@ function sum(i){
 }
 sum(5)(10);
 
+var a = sum(25);
+var b = sum(5);
+var c = sum(10);
+a(10); //25+10
+
 
 //q3
-function typeToKor(v){
+/* function typeToKor(v){
 	if(typeof v === 'number')	return "숫자";
 	if(typeof v ==='string')	return "문자";
 	if(typeof v === 'boolean') return "참거짓";
 	if(typeof v === "object")	return "객체";
+	if(typeof v === "function")	return "함수";
 	return '정체가 무엇이냐'
+} */
+	/* q3 풀이 */
+function typeToKor(value){
+	var types = {
+		number : '숫자',
+		string : '문자',
+		boolean : '참거짓',
+		object : '객체',
+		function : '함수',
+		undefined : '없어용'
+	};
+	return types[typeof value];
 }
 typeToKor(5);
 
@@ -73,6 +91,23 @@ function compare(x, y){
 }
 function biggest(i,j,k,l){
 	return compare(compare(compare(i,j),k),l);
+}
+/* q4 풀이 */
+
+function biggest(a,b,c,d){
+	var max = a;
+	// 반복문 시작
+	if ( max < b ) {
+	 max = b;
+	}
+	if ( max < c ) {
+	 max = c;
+	}
+	if ( max < d ) {
+	 max = d;
+	}
+	// 반복문 끝
+	return max;
 }
 biggest(2,5,10,1);
 
