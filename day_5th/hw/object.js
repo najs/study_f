@@ -50,11 +50,11 @@ var randomMembers = function(){
 };
 
 randomMembers();
-/*
+
 setInterval(function(){
-	randomMembers();
+	//randomMembers();
 },1000);
-*/
+
 
 
 
