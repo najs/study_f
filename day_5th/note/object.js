@@ -39,7 +39,7 @@ var members = response.l;
 
 var memberLiElement = members.map(function(v){
 	var src = v.p !== 'N' ? imagePath + v.p : '';
-	var className = src ? '': 'no-image';
+	var className = src ? '' : 'no-image';
 	return '<li class="'+ className +'"><span><img src="'+ src +'"></span><span>' + v.n + '</span></li>';
 }).join('');
 
