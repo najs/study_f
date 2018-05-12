@@ -36,36 +36,31 @@ var totalCount = response.l.length;
 var imagePath = response.i;
 var members = response.l;
 
-//랜덤숫자 뽑기
-var makeRandomNumber = function(max, min){
-	var randomNumber = Math.random()*(max - min) + min;
+var makeRandomNumber = function(min, max){
+	var randomNumber = Math.random() * (max - min) + min;
 	return parseInt(randomNumber,10);
 };
 
-//데이터 뽑기
 var selectData = function(n){
 	var samplingMembers = [];
-	for(var i = 0; i < n ; i++){
+	for(var i = 0; i < n; i++){
 		samplingMembers.push(members[i]);
 	}
 	return samplingMembers;
 };
 
-//새로운 데이터 만들기
 function makeData(num){
 	return selectData(num);
 }
 
-//그리기
 var drawMembers = function(memberCount, data){
 	var memberLiElement = data.map(function(v){
 		var src = v.p !== 'N' ? imagePath + v.p : '';
-		var className = src ? '': 'no-image';
+		var className = src ? '' : 'no-image';
 		return '<li class="'+ className +'"><span><img src="'+ src +'"></span><span>' + v.n + '</span></li>';
 	}).join('');
 	document.body.innerHTML = '<div>접속 맴버 : ' + memberCount + '명 <ul>' + memberLiElement + '</ul></div>';
 };
-
 
 setInterval(function(){
 	var randomCount = makeRandomNumber(0,totalCount);
