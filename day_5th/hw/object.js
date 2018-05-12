@@ -38,20 +38,20 @@ var members = response.l;
 
 var makeRandomNumber = function(min, max){
 	var randomNumber = Math.random() * (max - min) + min;
-	return parseInt(randomNumber,10);
+	return parseInt(randomNumber, 10);
 };
 
-var selectData = function(n){
+var samplingData = function(n){
 	var samplingMembers = [];
-	for(var i = 0; i < n; i++){
+	for(var i = n; i > 0; i--){
 		samplingMembers.push(members[i]);
 	}
 	return samplingMembers;
 };
 
-function makeData(num){
-	return selectData(num);
-}
+var makeData = function(num){
+	return samplingData(num);
+};
 
 var drawMembers = function(memberCount, data){
 	var memberLiElement = data.map(function(v){
@@ -63,6 +63,6 @@ var drawMembers = function(memberCount, data){
 };
 
 setInterval(function(){
-	var randomCount = makeRandomNumber(0,totalCount);
+	var randomCount = makeRandomNumber(0, totalCount);
 	drawMembers(randomCount, makeData(randomCount));
 }, 1000);
