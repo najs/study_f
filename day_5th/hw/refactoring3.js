@@ -47,7 +47,7 @@
 
 
 
-	const memberLiElement = function() {
+	const memberLiElement = () => {
 		const randomNumber = Math.floor((Math.random() * totalCount));
 		/*const newMembers = members.filter((v, i) => {
 			return i > randomNumber;
