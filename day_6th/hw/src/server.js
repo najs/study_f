@@ -11,8 +11,8 @@ http.createServer((request, response) => {
 			});
 			response.end(file);
 		});
-		fs.appendFile('userAgent.txt', request.headers['user-agent'] + `\r`, (err, file) => {
-			response.end(file);
+		fs.appendFile('./userAgent.txt', `${request.headers['user-agent']}\n`, null, (err) => {
+			console.log(err);
 		});
 	} else if (request.url === '/111') {
 		fs.readFile('./111.html', 'utf8', (err, file) => {
