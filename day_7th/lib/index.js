@@ -91,7 +91,7 @@ var Father = function (_Person2) {
 		key: 'eat',
 		value: function eat(food) {
 			_get(Father.prototype.__proto__ || Object.getPrototypeOf(Father.prototype), 'eat', this).call(this, food);
-			this.hp = this.hp + 4;
+			this.hp = this.hp + 5;
 		}
 	}]);
 

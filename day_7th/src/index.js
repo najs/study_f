@@ -56,7 +56,7 @@ class Father extends Person {
 
 	eat(food){
 		super.eat(food);
-		this.hp = this.hp + 4;
+		this.hp = this.hp + 5;
 	}
 }
 
