@@ -1,5 +1,5 @@
 {
-  "name": "day7-2",
+  "name": "day_8th",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,10 +17,15 @@
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
-    "webpack": "^4.9.1",
-    "webpack-cli": "^2.1.4"
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.1"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "redux": "^4.0.0"
   }
 }
