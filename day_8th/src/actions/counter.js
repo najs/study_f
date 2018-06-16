@@ -6,3 +6,4 @@ export function increase() {
 export function decrease() {
 	dispatch({type : 'DECREASE/COUNT'});
 }
+
