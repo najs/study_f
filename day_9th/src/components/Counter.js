@@ -1,5 +1,32 @@
 import React from 'react';
 
+class Counter extends React.Component {
+	constructor() {
+		console.log('constructor!!!!');
+		super();
+	};
+	componentDidMount() {
+		console.log('componentDidMount');
+	};
+	render() {
+		return (
+			<div onClick={this.props.onClick}>
+				<div>
+					카운터 컴포넌트
+				</div>
+				<div>
+        <span>
+          {this.props.children}
+        </span>
+				</div>
+			</div>
+		);
+	}
+}
+export default Counter;
+
+
+/*
 export default function Counter(props) {
 	console.log(props);
 	return (
@@ -14,4 +41,4 @@ export default function Counter(props) {
 			</div>
 		</div>
 	);
-}
+}*/
