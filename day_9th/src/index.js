@@ -22,7 +22,7 @@ ReactDOM.render(
     <MembershipHome />
   </Provider>
   ,
-  document.getElementById('app')
+  document.getElementById('app');
 );
 // MembershipHome.js 를 만들어라
 // 회원의 상태는 3가지이다.

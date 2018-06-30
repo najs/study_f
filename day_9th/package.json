@@ -1,5 +1,5 @@
 {
-  "name": "suhokim2.github.com",
+  "name": "study.",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,16 +9,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/suhokim2/suhokim2.github.com.git"
+    "type": "git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/suhokim2/suhokim2.github.com/issues"
-  },
-  "homepage": "https://github.com/suhokim2/suhokim2.github.com#readme",
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
