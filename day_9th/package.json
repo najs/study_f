@@ -1,5 +1,5 @@
 {
-  "name": "day_9th",
+  "name": "suhokim2.github.com",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,17 @@
     "build": "webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suhokim2/suhokim2.github.com.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suhokim2/suhokim2.github.com/issues"
+  },
+  "homepage": "https://github.com/suhokim2/suhokim2.github.com#readme",
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
@@ -22,8 +31,13 @@
     "webpack-cli": "^3.0.3"
   },
   "dependencies": {
+    "antd-mobile": "^2.2.0",
     "jquery": "^3.3.1",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react-dom": "^16.4.0",
+    "react-modal": "^3.4.5",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   }
 }

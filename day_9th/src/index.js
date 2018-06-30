@@ -1,29 +1,31 @@
+import 'antd-mobile/dist/antd-mobile.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from './components/Counter';
-import Button from './components/Buttton';
-import App from  './containers/App';
-import MembershipHome from './containers/MembershipHome'
+import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
+import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
+import MembershipHome from './containers/MembershipHome';
+import membershipLevelReducer from './reducers/membershipLevelReducer';
 
-function log() {
-	console.log(111111);
-}
-
-
-ReactDOM.render(
-	<MembershipHome	/>
-	,
-	document.getElementById('app')
+const store = createStore(
+  combineReducers({
+    membershipLevel: membershipLevelReducer
+  }),
+  compose(
+    applyMiddleware(thunk),
+    __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
+  )
 );
 
-/*
-import $ from 'jquery';
-
-const model = {
-	count: 0
-};
-$('#app').append(`<div id="count">${model.count}</div>`);
-$('#count').on('click', function() {
-	const count = model.count += 1;
-	$(this).text(count);
-});*/
+ReactDOM.render(
+  <Provider store={store}>
+    <MembershipHome />
+  </Provider>
+  ,
+  document.getElementById('app')
+);
+// MembershipHome.js 를 만들어라
+// 회원의 상태는 3가지이다.
+// 1. guest
+// 2. trial
+// 3. member
